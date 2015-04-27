@@ -1,13 +1,20 @@
-package model;
+package model.pieces;
 
 import java.util.List;
 import java.util.Observable;
 import java.util.Set;
 
+import model.Pair;
+import model.player.Player;
+
 public abstract class Piece extends Observable {
 	
-	Pair myPosition;
-	Player myPlayer;
+	private Pair myPosition;
+	private Player myPlayer;
+	
+	public Piece(int row, int col) {
+		myPosition = new Pair(row, col);
+	}
 	
 	public abstract Set<Pair> getLegalMoves(List<List<Piece>> board);
 	
@@ -22,4 +29,8 @@ public abstract class Piece extends Observable {
 		return myPosition;
 	}
 	
+	@Override
+	public String toString() {
+		return "Piece";
+	}
 }

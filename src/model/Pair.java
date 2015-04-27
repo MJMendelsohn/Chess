@@ -26,4 +26,9 @@ public class Pair {
 	public int getCol() {
 		return myCol;
 	}
+	
+	@Override
+	public String toString() {
+		return "" + myRow + " " + myCol;
+	}
 }

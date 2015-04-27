@@ -1,4 +1,5 @@
-package model;
+package model.player;
+
 
 public class PlayerFactory {
 	

@@ -1,4 +1,4 @@
-package model;
+package model.boards;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Set;
+
+import model.Pair;
+import model.pieces.Piece;
 
 public abstract class Board implements Observer {
 	
@@ -50,7 +53,7 @@ public abstract class Board implements Observer {
 	 */
 	public void addPiece(Piece piece) {
 		Pair position = piece.getPosition();
-		myBoard.get(position.getRow()).add(position.getCol(), piece);
+		myBoard.get(position.getRow()).set(position.getCol(), piece);
 	}
 	
 	@Override
@@ -68,4 +71,8 @@ public abstract class Board implements Observer {
 	
 	public abstract void initPieces();
 	
+	public void printBoard() {
+		myBoard.forEach(row -> {row.forEach(piece -> System.out.print(piece + "\t"));
+		System.out.println();});
+	}
 }

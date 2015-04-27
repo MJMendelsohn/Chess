@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.boards.Board;
+import model.player.Player;
+import model.player.PlayerFactory;
+
 public abstract class Game {
 	
 	Board myBoard;
@@ -10,7 +14,8 @@ public abstract class Game {
 	Turn myTurn;
 	
 	public Game(int playerCount) {
-		myBoard = BoardFactory.createBoard();	
+		myBoard = BoardFactory.createBoard();
+		createPlayers(playerCount);
 	}
 	
 	private void createPlayers(int playerCount) {

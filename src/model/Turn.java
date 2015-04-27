@@ -1,5 +1,7 @@
 package model;
 
+import model.player.Player;
+
 public class Turn {
 	
 	private Player myActive;
