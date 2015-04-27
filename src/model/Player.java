@@ -1,5 +1,10 @@
 package model;
 
 public class Player {
-	int id;
+	
+	int myId;
+	
+	public Player(int id) {
+		myId = id;
+	}
 }
